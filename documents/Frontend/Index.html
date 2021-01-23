@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="companyInfo card">
+        <div class="text-center">
+          <p class="balanceMsg">Current Balance of Company</p>
+          <h2 id="balance"></h2>
+          <p id="updateBalanceMsg"></p>
+        </div>
+        <br />
+        <!-- Basic Salary -->
+        <div class="form-group">
+          <label for="basicSalaryOfFirstGrade"
+            >Basic Salary Of First Grade</label
+          >
+          <div class="inpField">
+            <input
+              type="number"
+              class="form-control"
+              id="basicSalaryOfFirstGrade"
+              aria-describedby="emailHelp"
+              placeholder="Basic Salary"
+            />
+            <button
+              onclick="updateLowestBasicSalary()"
+              type="button"
+              class="btn btn-success"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+        <!--  Initial Balance-->
+        <div class="form-group">
+          <label for="initialBalanceOfCompany"
+            >Update Initial Balance of Company</label
+          >
+          <div class="inpField">
+            <input
+              type="number"
+              class="form-control"
+              id="initialBalanceOfCompany"
+              aria-describedby="emailHelp"
+              placeholder="Initial Balance"
+              onkeyup="updateBalanceMsgGenerator()"
+            />
+            <button
+              onclick="updateInitialBalance()"
+              type="button"
+              class="btn btn-success"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <button onclick="sendSalary()" type="button" class="btn btn-primary">
+          Send Salary
+        </button>
+        <br />
+        Total Amount requried to pay the salary of all employees is
+        <span id="totalAmountOfSalaryOfAllEmployees"></span>
+        <div id="warningText" class="warningText"></div>
+      </div>
+
+      <!-- User Table -->
+      <div id="tableDiv" class="card"></div>
+    </div>
+
+    <script src="./scripts/api.js"></script>
+    <script src="./scripts/axios.js"></script>
+    <script src="./scripts/company.js"></script>
+    <script src="./scripts/employee.js"></script>
+  </body>
+</html>
