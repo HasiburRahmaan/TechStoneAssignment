@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "debd2934-80db-4c9f-ba77-425723d173f7",
+		"name": "TechStoneAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bank Account",
+			"item": [
+				{
+					"name": "create bank account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankAccountNumber\":\"10\",\r\n    \"bankAccountName\":\"Demo account Ten\",\r\n    \"branchInfo\":\"Branch Info\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port9000}}/account/post",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"account",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account by account number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port9000}}/account/get/id/123456",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"account",
+								"get",
+								"id",
+								"123456"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "insert company information",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"initialBalance\":\"10000\",\r\n    \"basicSalaryOfLowestGrade\":5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/company/post",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"company",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get basic salary of lowest grade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/company/get/basicsalary",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"company",
+								"get",
+								"basicsalary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get company data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port9000}}/company/get/companyData",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"company",
+								"get",
+								"companyData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get total amount of all employees salary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port9000}}/company/get/totalsalary",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"company",
+								"get",
+								"totalsalary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update basic salary",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":15000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port9000}}/company/update/basicsalary",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"company",
+								"update",
+								"basicsalary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update initial balance",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 2000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port9000}}/company/update/initialBalance",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"company",
+								"update",
+								"initialBalance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send salaries to employees",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{port9000}}/company/update/sendsalary",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"company",
+								"update",
+								"sendsalary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "create employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeName\":\"EmployeeTen\",\r\n    \"employeeGradeId\":2,\r\n    \"employeeBankAccountNumber\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port9000}}/employee/post",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"employee",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port9000}}/employee/get/all",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"employee",
+								"get",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get full information of employee by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port9000}}/employee/get/information",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"employee",
+								"get",
+								"information"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"employeeId\": 38,\r\n        \"employeeName\": \"EmployeeTwo\",\r\n        \"employeeAddress\": null,\r\n        \"employeeMobile\": null,\r\n        \"employeeGradeId\": 2,\r\n        \"employeeBankAccountNumber\": \"145632\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{port9000}}/employee/update",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"employee",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "grade",
+			"item": [
+				{
+					"name": "create grade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gradeRank\":6,\r\n    \"gradeName\":\"Grade One\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/grade/post",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"grade",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all grade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{port9000}}/grade/get/all",
+							"host": [
+								"{{port9000}}"
+							],
+							"path": [
+								"grade",
+								"get",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
